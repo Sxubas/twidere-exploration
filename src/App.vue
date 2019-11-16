@@ -63,15 +63,6 @@ html, body, #app-container {
   padding: 0;
 }
 
-h1, h2, h3, h4, h5 {
-  font-family: 'Ubuntu Mono', monospace;
-  margin: 0;
-}
-
-h1 {
-  font-size: 3.2rem;
-}
-
 #content-container {
   display: flex;
   flex-direction: column;
@@ -87,17 +78,21 @@ h1 {
   min-height: 100%;
 }
 
-#nav {
-  padding: 30px;
+h1, h2, h3, h4, h5 {
+  font-family: 'Ubuntu Mono', monospace;
+  margin: 0;
 }
 
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
+h1 {
+  font-size: 3.2rem;
 }
 
-#nav a.router-link-exact-active {
-  color: #42b983;
+a {
+  color: #06bbd6;
+}
+
+b, h1 {
+  color: #06bbd6;
 }
 
 button {

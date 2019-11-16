@@ -4,7 +4,7 @@
     <div class="title-container">
       <h1 class="title-text">Twidere</h1>
       <span>A twitter clone to easen the life of twitter superusers</span>
-      <button @click="$router.push('/design')" class="call-to-action">
+      <button @click="$router.push('/stats')" class="call-to-action">
         I want to know more!
       </button>
     </div>

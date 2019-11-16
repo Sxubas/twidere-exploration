@@ -1,5 +1,6 @@
 export default [
   'home',
+  'stats',
   'design',
   'features',
   'connectivity',

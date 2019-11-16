@@ -6,6 +6,7 @@ import Features from '@/views/Features.vue';
 import Connectivity from '@/views/Connectivity.vue';
 import Performance from '@/views/Performance.vue';
 import Security from '@/views/Security.vue';
+import Stats from '@/views/Stats.vue';
 import Content from '@/views/Content.vue';
 
 Vue.use(VueRouter);
@@ -41,6 +42,11 @@ const routes = [
     path: '/security',
     name: 'security',
     component: Security,
+  },
+  {
+    path: '/stats',
+    name: 'stats',
+    component: Stats,
   },
   {
     path: '/content',

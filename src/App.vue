@@ -1,13 +1,16 @@
 <template>
-  <div id="app-container">
-    <div id="content-container">
-      <router-view/>
+  <div id="app-container" :class="{'no-scroll': hideAnimationScrolling}">
+    <div id="content-container" :class="{small: !isNavRoute || hideAnimationScrolling}">
+      <transition :name="transition" mode="out-in">
+        <router-view/>
+      </transition>
     </div>
     <navigation />
   </div>
 </template>
 
 <script>
+import sectionOrder from '@/sectionOrder';
 import Navigation from '@/components/Navigation.vue';
 
 export default {
@@ -16,8 +19,29 @@ export default {
   },
   data() {
     return {
-
+      transition: '',
+      hideAnimationScrolling: true,
     };
+  },
+  computed: {
+    isNavRoute() {
+      return this.$route.name !== 'home';
+    },
+  },
+  watch: {
+    $route(to, from) {
+      const toIndex = sectionOrder.indexOf(to.name);
+      const fromIndex = sectionOrder.indexOf(from.name);
+
+      if (toIndex > fromIndex) {
+        this.transition = 'slide-left';
+        return;
+      }
+
+      this.transition = 'slide-right';
+      this.hideAnimationScrolling = true;
+      setTimeout(() => { this.hideAnimationScrolling = false; }, 4 * 480);
+    },
   },
 };
 </script>
@@ -55,8 +79,12 @@ h1 {
   align-items: center;
   width: 80%;
   max-width: 1200px;
+  min-height: calc(100% + (100px + 2*8px));
   height: fit-content;
-  padding-bottom: calc(100px + 2*8px);
+}
+
+#content-container.small {
+  min-height: 100%;
 }
 
 #nav {
@@ -80,5 +108,34 @@ button {
   border: 0;
   background: linear-gradient(10deg, #7dd9e5, #7db3e5);
   cursor: pointer;
+}
+
+/* Animations */
+.slide-left-enter-active, .slide-left-leave-active {
+  transition: all .32s ease-in-out;
+}
+.slide-left-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  transform: translateX(-100%);
+  opacity: 0;
+}
+.slide-left-enter {
+  opacity: 0;
+  transform: translateX(100%);
+}
+
+.slide-right-enter-active, .slide-right-leave-active {
+  transition: all .32s ease-in-out;
+}
+.slide-right-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  transform: translateX(100%);
+  opacity: 0;
+}
+.slide-right-enter {
+  opacity: 0;
+  transform: translateX(-100%);
+}
+
+.no-scroll {
+  overflow: hidden;
 }
 </style>

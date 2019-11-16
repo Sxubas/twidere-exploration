@@ -18,15 +18,7 @@
 </template>
 
 <script>
-const sectionOrder = [
-  'home',
-  'design',
-  'features',
-  'connectivity',
-  'performance',
-  'security',
-  'content',
-];
+import sectionOrder from '@/sectionOrder';
 
 export default {
   methods: {

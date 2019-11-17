@@ -30,8 +30,4 @@ img {
   height: 300px;
   width: auto;
 }
-
-.whitespace {
-  height: 116px;
-}
 </style>

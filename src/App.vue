@@ -4,6 +4,7 @@
       <transition :name="transition" mode="out-in">
         <router-view/>
       </transition>
+      <div class="whitespace"></div>
     </div>
     <navigation />
   </div>
@@ -33,14 +34,13 @@ export default {
       const toIndex = sectionOrder.indexOf(to.name);
       const fromIndex = sectionOrder.indexOf(from.name);
 
+      this.transition = 'slide-right';
       if (toIndex > fromIndex) {
         this.transition = 'slide-left';
-        return;
       }
 
-      this.transition = 'slide-right';
       this.hideAnimationScrolling = true;
-      setTimeout(() => { this.hideAnimationScrolling = false; }, 4 * 480);
+      setTimeout(() => { this.hideAnimationScrolling = false; }, 2 * 280);
     },
   },
 };
@@ -71,12 +71,15 @@ html, body, #app-container {
   align-items: center;
   width: 80%;
   max-width: 1200px;
-  min-height: calc(100% + (100px + 2*8px));
   height: fit-content;
 }
 
 #content-container.small {
-  min-height: 100%;
+  min-height: 100vh;
+}
+
+.whitespace {
+  height: calc(100px + 2*8px);
 }
 
 h1, h2, h3, h4, h5 {
@@ -108,7 +111,7 @@ button {
 
 /* Animations */
 .slide-left-enter-active, .slide-left-leave-active {
-  transition: all .32s ease-in-out;
+  transition: all .28s ease-in-out;
 }
 .slide-left-leave-to /* .fade-leave-active below version 2.1.8 */ {
   transform: translateX(-100%);
@@ -120,7 +123,7 @@ button {
 }
 
 .slide-right-enter-active, .slide-right-leave-active {
-  transition: all .32s ease-in-out;
+  transition: all 0.28s ease-in-out;
 }
 .slide-right-leave-to /* .fade-leave-active below version 2.1.8 */ {
   transform: translateX(100%);

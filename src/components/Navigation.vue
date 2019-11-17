@@ -1,10 +1,23 @@
 <template>
   <div id="outer-nav-container" v-if="!isHome">
     <div id="nav-container">
-      <router-link class="adjacent-section-link" :to="`/${previousSection}`">{{previousSection}}</router-link> |
+      <div class="adjacent-section-container">
+        <router-link class="adjacent-section-link" :to="`/${previousSection}`">
+          <i class="material-icons left">navigate_before</i>
+          {{previousSection}}
+        </router-link>
+        <span class="adjacent-section-tooltip">Previous section</span>
+      </div> |
       <span class="current-section-text">{{currentSection}}</span>
       <template v-if="nextSection">
-        | <router-link class="adjacent-section-link" :to="`/${nextSection}`">{{nextSection}}</router-link>
+        |
+        <div class="adjacent-section-container">
+          <router-link class="adjacent-section-link" :to="`/${nextSection}`">
+            {{nextSection}}
+            <i class="material-icons right">navigate_next</i>
+          </router-link>
+          <span class="adjacent-section-tooltip">Next section</span>
+        </div>
       </template>
     </div>
 
@@ -55,7 +68,7 @@ export default {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
-  align-items: center;
+  align-items: baseline;
   position: fixed;
   bottom: 0;
   left: 0;
@@ -67,15 +80,61 @@ export default {
   z-index: 2;
 }
 
-.adjacent-section-link{
+.adjacent-section-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-self: center;
   flex: 1;
+}
+
+.adjacent-section-link{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
   font-size: 1.24rem;
   font-weight: bold;
   text-decoration: none;
   color: inherit;
-  margin: 2px 8px;
   text-align: center;
   text-transform: capitalize;
+  position: relative;
+  transition: all 0.16s ease-in-out;
+}
+
+.adjacent-section-link:hover {
+  text-shadow: 0 0 8px #06bbd6aa;
+}
+
+.adjacent-section-link:active {
+  color: #a4a4a4;
+  text-shadow: 0 0 8px #78c7d3aa;
+}
+
+.adjacent-section-link i {
+  padding-top: 2px;
+  font-size: 1.625rem;
+  position: absolute;
+  transition: all 0.16s ease-in-out;
+}
+
+.adjacent-section-link:hover i {
+  text-shadow: 0 0 8px #06bbd6aa;
+}
+
+.adjacent-section-link:active i {
+  color: #a4a4a4;
+  text-shadow: 0 0 8px #78c7d3aa;
+}
+
+.adjacent-section-link i.left {
+  left: -1.64rem;
+}
+
+.adjacent-section-link i.right {
+  right: -1.64rem;
 }
 
 .adjacent-section-link:visited {
@@ -89,6 +148,11 @@ export default {
   color: #06bbd6;
   text-align: center;
   text-transform: capitalize;
+}
+
+.adjacent-section-tooltip {
+  font-size: 0.76rem;
+  color: lightgray;
 }
 
 .nav-arrow {

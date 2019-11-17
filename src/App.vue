@@ -61,6 +61,7 @@ html, body, #app-container {
   height: 100vh;
   margin: 0;
   padding: 0;
+  user-select: none;
 }
 
 #content-container {

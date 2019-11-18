@@ -144,7 +144,7 @@ export default {
 .current-section-text {
   flex: 1;
   margin: 2px 8px;
-  font-size: 2.48rem;
+  font-size: 2.32rem;
   color: #06bbd6;
   text-align: center;
   text-transform: capitalize;

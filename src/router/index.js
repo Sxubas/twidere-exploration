@@ -8,6 +8,10 @@ import Performance from '@/views/Performance.vue';
 import Security from '@/views/Security.vue';
 import Stats from '@/views/Stats.vue';
 import Content from '@/views/Content.vue';
+import StaticAnalysis from '@/views/StaticAnalysis.vue';
+import Bugs from '@/views/Bugs.vue';
+import Storage from '@/views/Storage.vue';
+import Threading from '@/views/Threading.vue';
 
 Vue.use(VueRouter);
 
@@ -52,6 +56,26 @@ const routes = [
     path: '/content',
     name: 'content',
     component: Content,
+  },
+  {
+    path: '/static-analysis',
+    name: 'static-analysis',
+    component: StaticAnalysis,
+  },
+  {
+    path: '/bugs',
+    name: 'bugs',
+    component: Bugs,
+  },
+  {
+    path: '/threading',
+    name: 'threading',
+    component: Threading,
+  },
+  {
+    path: '/storage',
+    name: 'storage',
+    component: Storage,
   },
   {
     path: '/about',

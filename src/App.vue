@@ -107,6 +107,7 @@ button {
   border: 0;
   background: linear-gradient(10deg, #7dd9e5, #7db3e5);
   cursor: pointer;
+  transition: all .16s ease-in-out;
 }
 
 /* Animations */

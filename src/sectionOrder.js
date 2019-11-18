@@ -5,6 +5,10 @@ export default [
   'features',
   'connectivity',
   'performance',
+  'static-analysis',
   'security',
+  'threading',
+  'storage',
+  'bugs',
   'content',
 ];

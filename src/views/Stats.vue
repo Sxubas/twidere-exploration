@@ -83,9 +83,18 @@
         </div>
         <i class="material-icons">star</i>
       </div>
-      <div class="stats-card">
+      <div class="stats-card goodbye">
         <div class="stats-content">
-          <span class="title">Open issues</span>
+          <div class="goodbye-aclaration-container">
+            <span class="title">Open issues</span>
+            <span class="goodbye-text">
+              (before the project's owner
+                <a target="_blank" href="https://github.com/TwidereProject/Twidere-Android/commit/78cf31881a3fe02d1b9224052d98e19bc13c807f">
+                  said goodbye
+                </a>
+              to the project)
+            </span>
+          </div>
           <span class="metric">{{openIssues}}</span>
         </div>
         <i class="material-icons issues">error</i>
@@ -237,6 +246,29 @@ export default {
 
 .stats-card:nth-child(2n) i {
    color: lightgray;
+}
+
+.stats-card.goodbye {
+  width: 400px;
+}
+
+.stats-card.goodbye .title {
+  font-size: 1.08rem;
+}
+
+.stats-card.goodbye .metric {
+  font-size: 0.72rem;
+}
+
+.goodbye-aclaration-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.goodbye-text {
+  font-size: 0.72rem;
 }
 
 /* custom icon styles */

@@ -74,7 +74,7 @@ export default {
   left: 0;
   width: 100%;
   height: 100px;
-  padding: 8px 256px;
+  padding: 8px 200px;
   box-sizing: border-box;
   background-color: rgb(64, 64, 64);
   z-index: 2;

@@ -24,6 +24,11 @@ export default {
       hideAnimationScrolling: true,
     };
   },
+  mounted() {
+    if (this.isNavRoute) {
+      this.hideAnimationScrolling = false;
+    }
+  },
   computed: {
     isNavRoute() {
       return this.$route.name !== 'home';

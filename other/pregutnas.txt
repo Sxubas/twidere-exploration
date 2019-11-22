@@ -1,0 +1,14 @@
+debemos incluir las estàndar de android? (support, play-services, utils, etc)
+
+apagar en drafts --> donde se guradan? (local o en donde)
+
+seguridad:
+-> storage, datos sensibles, encriptados o no, contraseña viva enla bd local
+-> lo que 
+
+conectivity: intentar corregirlo! scenarios quitándolo a  la mitad
+
+perf: pruebas de rotación!!
+
+
+

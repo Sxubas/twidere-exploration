@@ -100,12 +100,27 @@
         <i class="material-icons issues">error</i>
       </div>
     </div>
+    <h2>
+      Libraries used
+    </h2>
+    <small>Click on a library to show more details</small>
+    <div class="libraries-container">
+      <div class="library-external-container" v-for="library in libraries" :key="library.name">
+        <library :library="library"/>
+        <hr>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
+import libraries from '@/assets/libraries';
+import Library from '@/components/Library.vue';
 /* eslint-disable no-await-in-loop */
 export default {
+  components: {
+    Library,
+  },
   data() {
     return {
       commits: 'Fetching data...',
@@ -115,6 +130,7 @@ export default {
       openIssues: 'Fetching data...',
       openPullRequests: 'Fetching data...',
       stars: 'Fetching data...',
+      libraries,
     };
   },
   async mounted() {
@@ -202,6 +218,16 @@ export default {
   margin-right: 16px;
 }
 
+h2 {
+  font-size: 2.4rem;
+}
+
+small {
+  font-size: 0.88rem;
+  color: lightgray;
+  margin-bottom: 4px;
+}
+
 .stats-card-container {
   display: flex;
   flex-direction: row;
@@ -269,6 +295,32 @@ export default {
 
 .goodbye-text {
   font-size: 0.72rem;
+}
+
+.libraries-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.library-external-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 100%;
+  background-color: #2c2c2c;
+  background-clip: content-box;
+}
+
+.library-external-container hr {
+  width: 100%;
+  margin: 0px 0;
+  z-index: 2;
+  background-color: #2c2c2c;
+  background-clip: content-box;
 }
 
 /* custom icon styles */

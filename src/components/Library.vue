@@ -9,7 +9,7 @@
         <span>{{library.description}}</span>
         <h4>Code snippets</h4>
         <div class="content-image-container" v-for="image in library.images" :key="image.src">
-          <img :src="require(`@/assets/${image.src}`)">
+          <img :src="require(`@/assets/images/${image.src}`)">
           <span class="file-path">{{image.filePath}}</span>
         </div>
       </div>
@@ -99,6 +99,11 @@ export default {
   justify-content: flex-start;
   align-items: flex-start;
   margin-top: 16px;
+  width: 100%;
+}
+
+.content-image-container img {
+  max-width: 88%;
 }
 
 .file-path {

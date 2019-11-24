@@ -1,7 +1,7 @@
 <template>
   <div class="home-container">
     <div class="upper-container">
-      <img class="home-logo" src="@/assets/twidere-logo.png" alt="twidere logo">
+      <img class="home-logo" src="@/assets/images/twidere-logo.png" alt="twidere logo">
       <div class="title-container">
         <h1 class="title-text">Twidere</h1>
         <span>A twitter clone to easen the life of twitter superusers</span>

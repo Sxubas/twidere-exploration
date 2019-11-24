@@ -1,7 +1,7 @@
 <template>
   <div class="feature-container">
     <h2>{{feature.name}}</h2>
-    <img :src="require(`@/assets/${feature.imgSrc}`)">
+    <img :src="require(`@/assets/images/${feature.imgSrc}`)">
     <div class="content-container" v-if="isDescription">
       <span>{{feature.description}}</span>
     </div>

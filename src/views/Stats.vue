@@ -2,7 +2,7 @@
   <div id="stats-container">
     <h1>Stats for 👨‍💻</h1>
     <div class="subtitle-container">
-      <img src="@/assets/play-store-logo.png" alt="">
+      <img src="@/assets/images/play-store-logo.png" alt="">
       <h2>Play Store</h2>
     </div>
     <div class="stats-card-container">
@@ -44,7 +44,7 @@
     </div>
     <!-- Github -->
     <div class="subtitle-container">
-      <img src="@/assets/github-white.png" alt="">
+      <img src="@/assets/images/github-white.png" alt="">
       <h2>Github</h2>
     </div>
     <div class="stats-card-container">

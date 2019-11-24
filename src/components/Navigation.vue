@@ -23,10 +23,10 @@
 
     <!-- fixed buttons -->
     <div class="nav-arrow left" @click="previous">
-      <img src="@/assets/nav-arrow-gray.png" alt="arrow">
+      <img src="@/assets/images/nav-arrow-gray.png" alt="arrow">
     </div>
     <div class="nav-arrow right" @click="next">
-      <img src="@/assets/nav-arrow-gray.png" alt="arrow">
+      <img src="@/assets/images/nav-arrow-gray.png" alt="arrow">
     </div>
   </div>
 </template>

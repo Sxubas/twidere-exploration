@@ -5,6 +5,7 @@
       We tested eventual connectivity by creating a set of scenarios that use the main features of the app.
       For each scenario we will describe the <b>app's response</b>, <b>good-practices</b>, the related <b>anti-pattern</b> and some <b>comments</b> on how it could be better.
     </span>
+    <small>Some time might be required for the videos to load properly</small>
     <div class="scenarios-container">
       <div v-for="scenario in scenarios" :key="scenario.name">
         <hr>

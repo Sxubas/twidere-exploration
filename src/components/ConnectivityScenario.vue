@@ -64,6 +64,7 @@ export default {
 
 .conn-scenario-video video{
   height: 440px;
+  max-width: 380px;
   margin-top: 4px;
 }
 </style>

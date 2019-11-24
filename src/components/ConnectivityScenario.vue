@@ -2,17 +2,24 @@
   <div class="conn-scenario-container">
     <div class="conn-scenario-content">
       <h2>
-        Scenario: {{ name }}
+        Scenario: {{ scenario.name }}
       </h2>
-      <div>
-        <b>Response: </b><span>{{ response }}</span>
+      <div class="conn-content">
+        <b>Response: </b><span>{{ scenario.response }}</span>
       </div>
-      <div>
-        <b>Good practice: </b><span>{{ goodPractice }}</span>
+      <div class="conn-content">
+        <b>Good practice: </b><span>{{ scenario.goodPractice }}</span>
+      </div>
+      <div class="conn-content" v-if="scenario.antiPattern">
+        <b>Related Anti-Pattern: </b><span>{{ scenario.antiPattern }}</span>
+      </div>
+      <div class="conn-content">
+        <b>Comments: </b><span>{{ scenario.comments }}</span>
       </div>
     </div>
     <div class="conn-scenario-video">
-      <img src="@/assets/twidere-screenshot.png" alt="screenshot">
+      <small>Click on the video to play/pause it</small>
+      <video :src="require(`@/assets/videos/${scenario.demoSrc}`)" controls :alt="`${scenario.name} video`"/>
     </div>
   </div>
 </template>
@@ -20,16 +27,8 @@
 <script>
 export default {
   props: {
-    name: {
-      type: String,
-      required: true,
-    },
-    response: {
-      type: String,
-      required: true,
-    },
-    goodPractice: {
-      type: String,
+    scenario: {
+      type: Object,
       required: true,
     },
   },
@@ -45,8 +44,26 @@ export default {
   margin-bottom: 16px;
 }
 
-.conn-scenario-video img{
-  height: 400px;
-  margin-top: 8px;
+.conn-scenario-content h2 {
+  font-size: 2.16rem;
+  margin-bottom: 8px;
+}
+
+.conn-content {
+  margin: 16px 0;
+}
+
+.conn-scenario-video {
+  margin-left: 8px;
+  margin-top: 4px;
+}
+
+.conn-scenario-video small {
+  color: lightgray;
+}
+
+.conn-scenario-video video{
+  height: 440px;
+  margin-top: 4px;
 }
 </style>

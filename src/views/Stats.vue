@@ -37,7 +37,7 @@
       <div class="stats-card">
         <div class="stats-content">
           <span class="title">Released on</span>
-          <span class="metric">April 30, 2019</span>
+          <span class="metric">April 30, 2012</span>
         </div>
         <i class="material-icons android">android</i>
       </div>

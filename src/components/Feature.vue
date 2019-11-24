@@ -40,9 +40,7 @@ export default {
   flex: 1;
   margin: 8px 16px;
   max-width: 320px;
-  border: 1px gray solid;
-  border-right: 0;
-  border-left: 0;
+  border-top: 1px gray solid;
 }
 
 .feature-container img {

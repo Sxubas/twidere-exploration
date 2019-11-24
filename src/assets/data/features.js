@@ -63,7 +63,7 @@ export default [
   },
   {
     name: 'Manage accounts',
-    imgSrc: 'manage.jpeg',
+    imgSrc: 'manage.png',
     description: 'switch between accounts or log in to a new account not added yet.',
   },
   {

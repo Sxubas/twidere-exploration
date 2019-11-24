@@ -114,7 +114,7 @@
 </template>
 
 <script>
-import libraries from '@/assets/libraries';
+import libraries from '@/assets/data/libraries';
 import Library from '@/components/Library.vue';
 /* eslint-disable no-await-in-loop */
 export default {

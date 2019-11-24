@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="static-analysis-container">
     <h1>Static analysis</h1>
     <span>If you cant see the chart, please </span>
     <button @click="refresh">Refresh</button>
@@ -22,9 +22,9 @@ export default {
     const Tableau = Vue.extend(TableauVue);
     const instance = new Tableau({
       propsData: {
-        url: 'https://public.tableau.com/views/issues-vis/CodeIssues?:display_count=y&publish=yes&:origin=viz_share_link',
-        height: 810,
-        width: 1000,
+        url: 'https://public.tableau.com/views/issues-vis/Patternshistory?:display_count=y&publish=yes&:origin=viz_share_link',
+        height: 600,
+        width: '100%',
       },
     });
     instance.$mount();
@@ -35,6 +35,10 @@ export default {
 </script>
 
 <style scoped>
+.static-analysis-container {
+  width: 100%;
+}
+
 .vis-container {
   /* height: 900px; */
 }
